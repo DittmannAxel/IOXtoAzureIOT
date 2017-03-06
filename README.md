@@ -9,5 +9,15 @@ First of all: This is the source where I get all my latest info from: [Cisco's D
 
 ##Cisco's IOx:
 If you dig around at Devent you will find some useful information about how to program inside this virtual machine which runs inside a Cisco router: e.g. here on [GitHub] (https://github.com/CiscoIOx). This is not about the IOx technology it is only about my little example, but just in case, here you will find the reference architecture of [IOx] (https://developer.cisco.com/site/iox/docs/#iox-architecture).
-Let's start with a short version of the router:
+Let's start with a short *"show version"* of the router to determine the software which I used for the test:
+
 `Cisco IOS Software, ir800 Software (ir800-UNIVERSALK9-M), Version 15.6(3)M0a, RELEASE SOFTWARE (fc1)`
+
+
+Now, after the configuration, which is availiable [here] (router_cfg.txt), the virtual machine inside the Router is up and running:
+
+a brief: *"show platform guest-os"* shows the status:
+
+`Guest OS status:
+`Installation: Cisco-GOS,version-1.1.2.0
+`State: RUNNING`
