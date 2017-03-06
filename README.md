@@ -4,7 +4,7 @@
 This is only a "proof-of-concept" test. Therefore the coding is not fail-safe nor should the program parts run in production. It is done purely to show that we can combine the best of two worlds and we are able to send data back and forth.
 First of all: This is the source where I get all my latest info from: [Cisco's Devnet for IOX] (https://developer.cisco.com/site/iox/), and of course my personal experience in several projects which I was working on in the past.
 
-##Overall Architecture:
+## Architecture:
 ![Architecture](IOX_Arch.jpg) 
 
 ##Cisco's IOx:
@@ -16,7 +16,7 @@ Let's start with a short *"show version"* of the router to determine the softwar
 
 Now, after the configuration, which is availiable [here] (router_cfg.txt), the virtual machine inside the Router is up and running:
 
-a brief: *"show platform guest-os"* shows the status:
+a brief: **"show platform guest-os"** shows the status:
 
 `Guest OS status:`
 
@@ -30,7 +30,7 @@ Now: ssh into the virtual machine and in my case just update vi *vi* the DNS Ser
 
 `https://nodejs.org/dist/v4.6.0/node-v4.6.0-linux-x64.tar.xz'
 
-Unpack it and before you proceed: give *file node* a try. It will show something like this:
+Unpack it and before you proceed: give **file node** a try. It will show something like this:
 
 `node: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.9, BuildID[sha1]=5e20e0c243c1c1f08cfa21c88d880cdd249720ad, not stripped`
 
@@ -38,7 +38,9 @@ In this Yocto image the *ld-linux-x86-64.so.2* is in */lib* but to run Node.js i
 
 `/home/root/node-v4.6.0-linux-x64/bin/npm`
 
-And now you are ready for part two: *Installing the Azure IOT Device SDK"!
+And now you are ready for part two: **Installing the Azure IOT Device SDK**.
+
+Just proceed with the **npm** install which you can find [here] (https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-node-node-getstarted). This tutorial is very straight forward, so there is no need to give an extra explanation. I just used the AMQP libraries and for device management I always use the Device Explorer. It has some advantage e.g. in troubleshooting like: to see data coming in, etc. For a PoC it is a quick win. Just download the precompiled version of [Device Explorer](https://github.com/Azure/azure-iot-sdks/releases) - just scroll down to the middle of the page. A tutorial can be found [here] (https://github.com/fsautomata/azure-iot-sdks/blob/master/tools/DeviceExplorer/doc/how_to_use_device_explorer.md).
 
 
 
