@@ -26,4 +26,19 @@ a brief: *"show platform guest-os"* shows the status:
 
 Just one little remark from myside: make sure IPv6 is enabled on the new internal interface, even of you do not make use of IPv6 in your network design. It is needed, to get the VM up and running.
 
+Now: ssh into the virtual machine and in my case just update vi *vi* the DNS Server /etc/resolv.conf. Download the precompiled Node.js binary:
+
+`https://nodejs.org/dist/v4.6.0/node-v4.6.0-linux-x64.tar.xz'
+
+Unpack it and before you proceed: give *file node* a try. It will show something like this:
+
+`node: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.9, BuildID[sha1]=5e20e0c243c1c1f08cfa21c88d880cdd249720ad, not stripped`
+
+In this Yocto image the *ld-linux-x86-64.so.2* is in */lib* but to run Node.js it is needed in */lib64/*. So eihter ln or copy this lib into the */lib64/* directory locally. With a fully reference to the binary (I haven't set the directories, yet), you can initialize *npm*:
+
+`/home/root/node-v4.6.0-linux-x64/bin/npm`
+
+And now you are ready for part two: *Installing the Azure IOT Device SDK"!
+
+
 
