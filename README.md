@@ -49,7 +49,7 @@ Let's proceed to part three:
 
 ## Sending Data to Azure IOT Device HUB:
 
-Now it is time to copy the send_json.js script to the sensor-device. This script just simulates two values, humidity and temperature and sends it over the wire via a socket. I used two modules for my example: [json-socket] (https://www.npmjs.com/package/json-socket) and standard net. The jsaon-socket module was a test for experimenting but you can easily cahnge it to pure net.
+Now it is time to copy the send_json.js script to the sensor-device. This script just simulates two values, humidity and temperature and sends it over the wire via a socket. I used two modules for my example: json-socket: https://www.npmjs.com/package/json-socket and standard net. The json-socket module was a test for experimenting but you can easily change it to pure net.
 But first you need to start the receive_json.js on the IOX. Just ssh (after you scp'ed the file) towards the IOX, install the modules and than start it. Once it will receive data from the device it will send everything to IOT Hub.
 
 **Proof-of-Concept done: Cisco IOX sends data, received via the network, to Microsoft Azure IOT Hub.**
