@@ -11,7 +11,7 @@ boot system flash:/ir800-universalk9-mz.SPA.156-3.M0a
 boot-end-marker
 !
 !
-enable secret 5 $1$2zwf$8m8xxxxx
+enable secret 5 xxxx
 !
 no aaa new-model
 ethernet lmi ce
