@@ -26,7 +26,7 @@ a brief: **"show platform guest-os"** shows the status:
 
 Just one little remark from myside: make sure IPv6 is enabled on the new internal interface, even of you do not make use of IPv6 in your network design. It is needed, to get the VM up and running.
 
-Now: ssh into the virtual machine and in my case just update vi *vi* the DNS Server /etc/resolv.conf. Download the precompiled Node.js binary:
+Now: ssh into the virtual machine and in my case just update via *vi* the DNS Server /etc/resolv.conf. Download the precompiled Node.js binary:
 
 `https://nodejs.org/dist/v4.6.0/node-v4.6.0-linux-x64.tar.xz'
 
@@ -47,7 +47,7 @@ Just proceed with the **npm** install which you can find [here] (https://docs.mi
 
 Let's proceed to part three:
 
-## Sending Data to Azure IOT Device HUB:
+## Sending Data to Azure IOT HUB:
 
 Now it is time to copy the send_json.js script to the sensor-device. This script just simulates two values, humidity and temperature and sends it over the wire via a socket. I used two modules for my example: json-socket: https://www.npmjs.com/package/json-socket and standard net. The json-socket module was a test for experimenting but you can easily change it to pure net.
 But first you need to start the receive_json.js on the IOX. Just ssh (after you scp'ed the file) towards the IOX, install the modules and than start it. Once it will receive data from the device it will send everything to IOT Hub.
