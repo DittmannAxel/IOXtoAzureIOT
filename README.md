@@ -34,7 +34,7 @@ Unpack it and before you proceed: give **file node** a try. It will show somethi
 
 `node: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.9, BuildID[sha1]=5e20e0c243c1c1f08cfa21c88d880cdd249720ad, not stripped`
 
-In this Yocto image the *ld-linux-x86-64.so.2* is in */lib* but to run Node.js it is needed in */lib64/*. So either ln or copy this lib into the */lib64/* directory locally. With a fully reference to the binary (I haven't set the directories, yet), you can initialize *npm*:
+In this Yocto image the *ld-linux-x86-64.so.2* is in **/lib** but to run Node.js it is needed in **/lib64/**. So either ln or copy this lib into the **/lib64/** directory locally. With a fully reference to the binary (I haven't set the directories, yet), you can initialize *npm*:
 
 `/home/root/node-v4.6.0-linux-x64/bin/npm`
 
@@ -43,6 +43,18 @@ And now you are ready for part two:
 ## Installing the Azure IOT Device SDK:
 
 Just proceed with the **npm** install which you can find [here] (https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-node-node-getstarted). This tutorial is very straight forward, so there is no need to give an extra explanation. I just used the AMQP libraries and for device management I typically use the Device Explorer. It has some advantage e.g. in troubleshooting like: to see data coming in, etc. For a PoC it is a quick win. Just download the precompiled version of [Device Explorer](https://github.com/Azure/azure-iot-sdks/releases) - just scroll down to the middle of the page. A tutorial can be found [here] (https://github.com/fsautomata/azure-iot-sdks/blob/master/tools/DeviceExplorer/doc/how_to_use_device_explorer.md).
+
+
+Let's proceed to part three:
+
+## Sending Data to Azure IOT Device HUB:
+
+Now it is time to copy the send_json.js script to the sensor-device. This script just simulates two values, humidity and temperature and sends it over the wire via a socket. I used two modules for my example: [json-socket] (https://www.npmjs.com/package/json-socket) and standard net. The jsaon-socket module was a test for experimenting but you can easily cahnge it to pure net.
+But first you need to start the receive_json.js on the IOX. Just ssh (after you scp'ed the file) towards the IOX, install the modules and than start it. Once it will receive data from the device it will send everything to IOT Hub.
+
+**Proof-of-Concept done: Cisco IOX sends data, received via the network, to Microsoft Azure IOT Hub.**
+
+
 
 
 
