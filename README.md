@@ -54,7 +54,7 @@ But first you need to start the receive_json.js on the IOX. Just ssh (after you 
 
 **Proof-of-Concept done: Cisco IOX sends data, received via the network, to Microsoft Azure IOT Hub.**
 
-
+![Data sent - proof](final_daa.jpg) 
 
 
 
