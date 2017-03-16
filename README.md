@@ -8,13 +8,13 @@ First of all: This is the source where I get all my latest info from this kind o
 ![Architecture](IOX_Arch.jpg) 
 
 ## Cisco's IOx:
-If you dig around at Devnet you will find some useful information about how to make use of this virtual machine which runs inside a Cisco router: e.g. here on [GitHub] (https://github.com/CiscoIOx). This post is not about the IOx technology it is only about my little example, but just in case you want to read  more: here you will find the reference architecture of [IOx] (https://developer.cisco.com/site/iox/docs/#iox-architecture).
+If you dig around at Devnet you will find some useful information about how to make use of this virtual machine which runs inside a Cisco router: e.g. here on [GitHub] (https://github.com/CiscoIOx). This post is not about the IOx technology it is only about my little example, but just in case you want to read more: here you will find the reference architecture of [IOx] (https://developer.cisco.com/site/iox/docs/#iox-architecture).
 Let's start with a short *"show version"* of the router to determine the software which I used for the test:
 
 `Cisco IOS Software, ir800 Software (ir800-UNIVERSALK9-M), Version 15.6(3)M0a, RELEASE SOFTWARE (fc1)`
 
 
-Now, after the configuration is all done, the virtual machine inside the Router is up and running:
+Now, after the configuration is all done, the virtual machine inside the router is up and running:
 
 a brief: **"show platform guest-os"** shows the status:
 
