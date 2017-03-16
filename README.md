@@ -14,7 +14,7 @@ Let's start with a short *"show version"* of the router to determine the softwar
 `Cisco IOS Software, ir800 Software (ir800-UNIVERSALK9-M), Version 15.6(3)M0a, RELEASE SOFTWARE (fc1)`
 
 
-Now, after the configuration, which is availiable [here] (router_cfg.txt), the virtual machine inside the Router is up and running:
+Now, after the configuration is all done, the virtual machine inside the Router is up and running:
 
 a brief: **"show platform guest-os"** shows the status:
 
@@ -26,7 +26,7 @@ a brief: **"show platform guest-os"** shows the status:
 
 Just one little remark from myside: make sure IPv6 is enabled on the new internal interface, even of you do not make use of IPv6 in your network design. It is needed, to get the VM up and running.
 
-Now: ssh into the virtual machine and in my case just update via *vi* the DNS Server /etc/resolv.conf. Download the precompiled Node.js binary:
+Now: ssh into the virtual machine and in my case just update via **vi** the DNS Server /etc/resolv.conf. Download the precompiled Node.js binary:
 
 `https://nodejs.org/dist/v4.6.0/node-v4.6.0-linux-x64.tar.xz'
 
@@ -34,7 +34,7 @@ Unpack it and before you proceed: give **file node** a try. It will show somethi
 
 `node: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.9, BuildID[sha1]=5e20e0c243c1c1f08cfa21c88d880cdd249720ad, not stripped`
 
-In this Yocto image the *ld-linux-x86-64.so.2* is in **/lib** but to run Node.js it is needed in **/lib64/**. So either ln or copy this lib into the **/lib64/** directory locally. With a fully reference to the binary (I haven't set the directories, yet), you can initialize *npm*:
+In this Yocto image the *ld-linux-x86-64.so.2* is in **/lib** but to run Node.js it is needed in **/lib64/**. So either ln or copy this lib into the **/lib64/** directory locally. With a fully reference to the binary (I haven't set the directories, yet), you can initialize **npm**:
 
 `/home/root/node-v4.6.0-linux-x64/bin/npm`
 
